@@ -6,6 +6,7 @@ use App\Http\Controllers\admincontrol\logincontroller;
 use App\Http\Controllers\frontend\candidateController;
 use App\Http\Controllers\frontend\frontend_login;
 use App\Http\Controllers\frontend\regesterControl;
+use App\Models\candidateInfo;
 use App\Models\dmaContent;
 // use App\Http\Controllers\admincontrol\logincontroller;
 use Illuminate\Support\Facades\Route;
@@ -85,6 +86,12 @@ Route::get('/register', [admincontroller::class, 'create'])
 
 Route::post('/register/store', [admincontroller::class, 'store'])
     ->name('adminstore');
+
+route::get("/candidate", function(){
+    $candidateinfo = candidateInfo::all();
+    // return $candidateinfo;
+    return view("admin.candidateManage", compact("candidateinfo"));
+})->name("candidateManage");
 
 
 

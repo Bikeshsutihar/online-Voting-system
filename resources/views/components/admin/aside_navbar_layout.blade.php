@@ -41,7 +41,7 @@
                         Voters
                     </a>
 
-                    <a href="#"
+                    <a href="{{ route("candidateManage") }}"
                         class="flex items-center px-6 py-3 text-white hover:bg-(--secondary-color) hover:text-blue-900">
                         <i class="fas fa-user-tie mr-3"></i>
                         Candidates
