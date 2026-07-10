@@ -9,7 +9,8 @@
                 class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 + Add Candidate
             </button> --}}
-            <a href="{{ route('newCandidate') }}" class="bg-[#e9edc9] text-[#283618] px-4 py-2 rounded hover:bg-[#ccd5ae] ">regester as candidate</a>
+            <a href="{{ route('newCandidate') }}"
+                class="bg-[#e9edc9] text-[#283618] px-4 py-2 rounded hover:bg-[#ccd5ae] ">regester as candidate</a>
         </div>
 
         <!-- Candidate Cards -->
