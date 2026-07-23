@@ -20,7 +20,9 @@ Route::get('/', function () {
 })->name("homePage");
 
 route::get('/candidate', function(){
-    return view('frontendCode.candidate');
+    $show = candidateInfo::all();
+    // return $show;
+    return view('frontendCode.candidate', compact('show'));
 })->name('candidate');
 
 route::get('/vote', function(){

@@ -17,21 +17,23 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <!-- Single Card -->
-            <div class="bg-white shadow rounded-lg p-5 text-center">
-                {{-- <img src="https://via.placeholder.com/100" class="mx-auto rounded-full mb-3"> --}}
+            @foreach ($show as $i )
+                <div class="bg-white shadow rounded-lg p-2 text-center">
+                <img src="{{ asset($i->photo) }}" class="mx-auto h-[200px] w-[200px] mb-3">
 
-                <h2 class="text-xl font-semibold">John Doe</h2>
-                <p class="text-gray-500">Party: UML</p>
+                <h2 class="text-xl font-semibold">{{$i->fullname}}</h2>
+                <p class="text-gray-500">{{$i->party}}</p>
 
                 <div class="mt-4 flex justify-center gap-2">
                     <button class="bg-green-500 text-white px-3 py-1 rounded">Edit</button>
                     <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
                 </div>
             </div>
+            @endforeach
 
             <!-- Duplicate cards dynamically -->
-            <div class="bg-white shadow rounded-lg p-5 text-center">
-                {{-- <img src="https://via.placeholder.com/100" class="mx-auto rounded-full mb-3"> --}}
+            {{-- <div class="bg-white shadow rounded-lg p-5 text-center">
+                <img src="https://via.placeholder.com/100" class="mx-auto rounded-full mb-3">
 
                 <h2 class="text-xl font-semibold">Jane Smith</h2>
                 <p class="text-gray-500">Party: Congress</p>
@@ -40,7 +42,7 @@
                     <button class="bg-green-500 text-white px-3 py-1 rounded">Edit</button>
                     <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
