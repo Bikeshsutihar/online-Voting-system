@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admincontrol;
 
 use App\Http\Controllers\Controller;
 use App\Models\adminRegister;
+use App\Models\candidateInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -84,6 +85,8 @@ class admincontroller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+         $delt = candidateInfo::find($id);
+         $delt ->delete();
+         return redirect()->back();
     }
 }

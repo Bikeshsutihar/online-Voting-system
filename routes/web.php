@@ -119,6 +119,8 @@ return view("admin.admin_candidateTable");
 
 });
 
+route::delete("/delete/{id}", [admincontroller::class, 'destroy'])->name('d');
+
 
 
 

@@ -86,16 +86,24 @@
                                                         <i class="fa-solid fa-check"></i>
                                                     </a>
 
-                                                    <a href="#"
+                                                    {{-- <a href="#"
                                                         class="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm">
                                                        <i class="fa-solid fa-xmark"></i>
-                                                    </a>
+                                                    </a> --}}
 
                                                     <!-- Delete -->
-                                                    {{-- <button
-                                                        class="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm">
-                                                        Delete
-                                                    </button> --}}
+
+                                                    <form action="{{ route('d', $c->id) }}" method="post" onsubmit="return confirm('Are you sure you want delete this record')">
+                                                       @csrf
+                                                        @method("delete")
+
+                                                        <button
+                                                            class="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm">
+                                                        <i class="fa-solid fa-xmark"></i>
+
+                                                        </button>
+
+                                                    </form>
 
                                                 </div>
                                             </td>
