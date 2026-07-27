@@ -12,4 +12,5 @@ public function voteCount()
 {
     return $this->hasOne(VoteCount::class, 'candidate_info_id');
 }
+
 }

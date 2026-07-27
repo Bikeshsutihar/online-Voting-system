@@ -11,10 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('votes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+      Schema::create('votes', function (Blueprint $table) {
+    $table->id();
+
+    $table->foreignId('candidate_info_id')
+        ->constrained('candidate_infos')
+        ->cascadeOnDelete();
+
+    $table->unsignedBigInteger('user_id');
+
+    $table->timestamps();
+
+    $table->unique(['candidate_info_id', 'user_id']);
+});
     }
 
     /**

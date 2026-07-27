@@ -74,7 +74,8 @@ route::post("/candidate-store",[candidateController::class,"store"])->name("cand
 
 Route::post('/vote/{candidateInfo}', [vote_count::class, 'store'])->name('vote.store');
 
-
+// Route::post('/vote/{candidateInfo}', [vote_count::class, 'store'])->name('vote.store');
+// Route::get('/logout', [frontend_login::class, 'logout'])->name('logout');
 
 
 
