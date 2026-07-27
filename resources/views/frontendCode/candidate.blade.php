@@ -18,15 +18,15 @@
 
             <!-- Single Card -->
             @foreach ($show as $i )
-                <div class="bg-white shadow rounded-lg p-2 text-center">
+                <div class="bg-white shadow rounded-lg p-2 text-center w-50">
                 <img src="{{ asset($i->photo) }}" class="mx-auto h-[200px] w-[200px] mb-3">
 
                 <h2 class="text-xl font-semibold">{{$i->fullname}}</h2>
                 <p class="text-gray-500">{{$i->party}}</p>
 
                 <div class="mt-4 flex justify-center gap-2">
-                    <button class="bg-green-500 text-white px-3 py-1 rounded">Edit</button>
-                    <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+                    <a href="#" class="bg-green-500 text-white px-3 py-1 rounded">view</a>
+
                 </div>
             </div>
             @endforeach

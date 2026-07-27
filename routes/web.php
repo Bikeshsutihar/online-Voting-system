@@ -6,6 +6,7 @@ use App\Http\Controllers\admincontrol\logincontroller;
 use App\Http\Controllers\frontend\candidateController;
 use App\Http\Controllers\frontend\frontend_login;
 use App\Http\Controllers\frontend\regesterControl;
+use App\Http\Controllers\vote_count;
 use App\Models\candidateInfo;
 use App\Models\dmaContent;
 // use App\Http\Controllers\admincontrol\logincontroller;
@@ -57,8 +58,11 @@ route::get('/new-candidate', function(){
 })->name('newCandidate');
 
 route::get('/vote-now', function(){
-    return view("frontendCode.voteNow");
+    $votenow= candidateInfo::all();
+    return view("frontendCode.voteNow", compact("votenow"));
 })->name("voteNow");
+
+
 
 // resource regester frontend
 
@@ -67,6 +71,8 @@ route::post('/frontend-register', [regesterControl::class,'store'])->name('fregi
 route::post('/f-login-store', [frontend_login::class,'store'])->name('frontLogin');
 route::post("/candidate-store",[candidateController::class,"store"])->name("candidateStore");
 
+
+Route::post('/vote/{candidateInfo}', [vote_count::class, 'store'])->name('vote.store');
 
 
 
