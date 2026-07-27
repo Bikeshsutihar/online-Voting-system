@@ -18,11 +18,11 @@ return new class extends Migration
         ->constrained('candidate_infos')
         ->cascadeOnDelete();
 
-    $table->unsignedBigInteger('user_id');
+    $table->string('ip_address', 45);
 
     $table->timestamps();
 
-    $table->unique(['candidate_info_id', 'user_id']);
+    $table->unique(['candidate_info_id', 'ip_address']);
 });
     }
 
