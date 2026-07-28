@@ -52,7 +52,7 @@ class regesterControl extends Controller
         $frontendRegister->password             =             $request -> password;
         $frontendRegister->confirm_password     =             $request -> confirm_password;
         $frontendRegister -> save();
-       return redirect()->route('frontLogin');
+       return redirect()->route('flogin');
 
     }
 

@@ -1,5 +1,5 @@
 <x-frontend.layout_template>
-    <div class="py-25 max-w-[90%] mx-auto">
+    <div class="py-25 max-w-[90%] mx-auto flex gap-9 mt-5">
         @foreach ($votenow as $i)
             <div class="bg-white shadow rounded-lg p-2 text-center w-50">
                 <img src="{{ asset($i->photo) }}" class="mx-auto h-[200px] w-[200px] mb-3">
