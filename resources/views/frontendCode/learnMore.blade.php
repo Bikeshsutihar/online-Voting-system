@@ -17,8 +17,8 @@
     <div class="max-w-6xl mx-auto px-6 py-10">
 
         <!-- Header -->
-        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h1 class="text-4xl font-bold text-center text-blue-900 mb-4">
+        <div class="bg-[#e9edc9] rounded-lg shadow-md p-8 mb-8">
+            <h1 class="text-4xl font-bold text-center text-[#283618] mb-4">
                 Online Voting System
             </h1>
             <p class="text-gray-600 text-center text-lg">
@@ -28,7 +28,7 @@
 
         <!-- Introduction -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Introduction</h2>
+            <h2 class="text-2xl font-bold text-[#283618] mb-4">Introduction</h2>
             <p class="text-gray-700 leading-relaxed">
                 The Online Voting System is a web-based application designed to conduct elections
                 electronically. It allows voters to register, log in securely, view candidates,
@@ -39,7 +39,7 @@
 
         <!-- Objectives -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Project Objectives</h2>
+            <h2 class="text-2xl font-bold text-[#283618] mb-4">Project Objectives</h2>
 
             <ul class="list-disc pl-6 space-y-2 text-gray-700">
                 <li>Provide a secure online voting platform.</li>
@@ -52,11 +52,11 @@
 
         <!-- Technologies -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Technologies Used</h2>
+            <h2 class="text-2xl font-bold text- mb-4">Technologies Used</h2>
 
             <div class="overflow-x-auto">
                 <table class="w-full border border-gray-300">
-                    <thead class="bg-blue-900 text-white">
+                    <thead class="bg-[#e9edc9] text-[#283618]">
                         <tr>
                             <th class="border p-3">Technology</th>
                             <th class="border p-3">Purpose</th>
@@ -90,12 +90,12 @@
 
         <!-- Modules -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-6">System Modules</h2>
+            <h2 class="text-2xl font-bold text-[#283618] mb-6">System Modules</h2>
 
             <div class="grid md:grid-cols-2 gap-6">
 
                 <div class="border rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-blue-700 mb-2">
+                    <h3 class="font-bold text-lg text-[#283618] mb-2">
                         User Registration
                     </h3>
                     <p class="text-gray-600">
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="border rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-blue-700 mb-2">
+                    <h3 class="font-bold text-lg text-[#283618] mb-2">
                         User Login
                     </h3>
                     <p class="text-gray-600">
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="border rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-blue-700 mb-2">
+                    <h3 class="font-bold text-lg text-[#283618] mb-2">
                         Candidate Management
                     </h3>
                     <p class="text-gray-600">
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="border rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-blue-700 mb-2">
+                    <h3 class="font-bold text-lg text-[#283618] mb-2">
                         Voting Module
                     </h3>
                     <p class="text-gray-600">
@@ -131,7 +131,7 @@
                 </div>
 
                 <div class="border rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-blue-700 mb-2">
+                    <h3 class="font-bold text-lg text-[#283618] mb-2">
                         Result Management
                     </h3>
                     <p class="text-gray-600">
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="border rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-blue-700 mb-2">
+                    <h3 class="font-bold text-lg text-[#283618] mb-2">
                         Admin Panel
                     </h3>
                     <p class="text-gray-600">
@@ -153,7 +153,7 @@
 
         <!-- Features -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Key Features</h2>
+            <h2 class="text-2xl font-bold text-[#283618] mb-4">Key Features</h2>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-green-50 p-4 rounded-lg">
@@ -184,7 +184,7 @@
 
         <!-- Advantages -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Advantages</h2>
+            <h2 class="text-2xl font-bold text-[#283618] mb-4">Advantages</h2>
 
             <ul class="list-disc pl-6 space-y-2 text-gray-700">
                 <li>Reduces paperwork and operational cost.</li>
@@ -197,7 +197,7 @@
 
         <!-- Future Scope -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Future Enhancements</h2>
+            <h2 class="text-2xl font-bold text-[#283618] mb-4">Future Enhancements</h2>
 
             <ul class="list-disc pl-6 space-y-2 text-gray-700">
                 <li>Two-Factor Authentication (2FA)</li>
@@ -210,7 +210,7 @@
         </div>
 
         <!-- Conclusion -->
-        <div class="bg-blue-900 text-white rounded-lg shadow-md p-8">
+        <div class="bg-[#e9edc9] text-black rounded-lg shadow-md p-8">
             <h2 class="text-2xl font-bold mb-4">Conclusion</h2>
 
             <p class="leading-relaxed">
