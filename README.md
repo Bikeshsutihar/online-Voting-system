@@ -10,7 +10,6 @@ authentication, and database-driven application design.
 - 👤 Candidate listing with profiles
 - ✅ Secure voting — one vote per authenticated user
 - 📊 Live results page with vote counts
-- 📱 Fully responsive UI (mobile, tablet, desktop)
 - 🎨 Clean, modern interface styled with Tailwind CSS
 - ℹ️ About page explaining the voting process
 
@@ -79,7 +78,7 @@ project to demonstrate practical skills in:
 - Full-stack web development with the MVC pattern
 - User authentication and session handling
 - CRUD operations with a relational database
-- Responsive UI design with utility-first CSS
+
 
 ## ⚠️ Disclaimer
 This is an educational project and is **not intended for use in real, 
