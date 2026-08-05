@@ -38,13 +38,17 @@
                 @csrf
 
                 <div>
-                    <label class="block font-semibold text-[#1F2A1F] mb-2">
+                    <label class="block font-semibold text-[#1F2A1F] mb-2" for="fullname">
                         Full Name
                     </label>
 
                     <input type="text" name="fullname"
                         class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6B7638]"
                         placeholder="Enter full name">
+                        @error('fullname')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-4">
@@ -57,6 +61,10 @@
                         <input type="email" name="email"
                             class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:ring-2 focus:ring-[#6B7638]"
                             placeholder="Example@gmail.com">
+                              @error('email')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                     </div>
 
                     <div>
@@ -67,6 +75,10 @@
                         <input type="tel" name="phone_number"
                             class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:ring-2 focus:ring-[#6B7638]"
                             placeholder="+977 98XXXXXXXX">
+                              @error('phone_number')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                     </div>
 
                 </div>
@@ -80,16 +92,24 @@
                         <input type="text" name="voter_id"
                             class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:ring-2 focus:ring-[#6B7638]"
                             placeholder="Enter Your Voter ID">
+                              @error('voter_id')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                     </div>
 
                     <div>
-                        <label class="block font-semibold text-[#1F2A1F] mb-2">
+                        <label class="block font-semibold text-[#1F2A1F] mb-2" for="citizenship_no">
                             Citizenship Number
                         </label>
 
                         <input type="text" name="citizenship_no"
                             class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:ring-2 focus:ring-[#6B7638]"
                             placeholder="Citizenship Number">
+                              @error('citizenship_no')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                     </div>
                 </div>
 
@@ -107,6 +127,10 @@
                             <option value="female">Female</option>
                             <option value="other">Other</option>
                         </select>
+                          @error('gender')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                     </div>
 
                     <div>
@@ -134,6 +158,10 @@
                         <input type="password" name="password"
                             class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:ring-2 focus:ring-[#6B7638]"
                             placeholder="password">
+                              @error('password')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                     </div>
 
                     <div>
@@ -144,6 +172,7 @@
                         <input type="password" name="confirm_password"
                             class="w-full px-4 py-3 border border-[#D8DDBA] rounded-xl focus:ring-2 focus:ring-[#6B7638]"
                             placeholder="confirm password">
+
                     </div>
 
                 </div>

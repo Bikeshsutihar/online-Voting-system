@@ -14,7 +14,7 @@
         </div>
 
         <!-- Candidate Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="sm:flex gap-3">
 
             <!-- Single Card -->
             @foreach ($show as $i )
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Add Candidate Modal -->
-    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50  flex justify-center items-center">
+    {{-- <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50  flex justify-center items-center">
 
         <div class="bg-white w-[500px] p-6 rounded-lg shadow-lg">
 
@@ -59,6 +59,10 @@
 
                 <input type="text" name="name" placeholder="Candidate Name"
                     class="w-full border p-2 mb-3 rounded">
+                    @error('name')
+                    <span class="text-red-600">{{ $message }}</span>
+
+                    @enderror
 
                 <input type="text" name="party" placeholder="Party Name" class="w-full border p-2 mb-3 rounded">
 
@@ -78,5 +82,5 @@
             </form>
 
         </div>
-    </div>
+    </div> --}}
 </x-frontend.layout_template>

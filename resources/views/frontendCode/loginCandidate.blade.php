@@ -26,12 +26,17 @@
 
                 <!-- Full Name -->
                 <div>
-                    <label class="block font-medium mb-2">Full Name</label>
+                    <label class="block font-medium mb-2" for="fullname">Full Name</label>
                     <input
                         type="text"
                         name="fullname"
+                        id="fullname"
                         placeholder="Enter full name"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('fullname')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Email -->
@@ -42,6 +47,10 @@
                         name="email"
                         placeholder="example@gmail.com"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('email')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Phone -->
@@ -52,6 +61,10 @@
                         name="phone"
                         placeholder="98XXXXXXXX"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('phone')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Citizenship -->
@@ -62,6 +75,10 @@
                         name="citizenship_no"
                         placeholder="Enter citizenship number"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('citizenship_no')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Date of Birth -->
@@ -71,6 +88,10 @@
                         type="date"
                         name="dob"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('dob')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Gender -->
@@ -87,6 +108,10 @@
                         <option value="Other">Other</option>
 
                     </select>
+                    @error('gender')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Political Party -->
@@ -97,6 +122,10 @@
                         name="party"
                         placeholder="Enter party name"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('party')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Election Position -->
@@ -114,6 +143,10 @@
                         <option value="Treasurer">Treasurer</option>
 
                     </select>
+                    @error('position')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Address -->
@@ -125,6 +158,10 @@
                         rows="3"
                         placeholder="Enter your address"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                        @error('address')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Candidate Manifesto -->
@@ -146,6 +183,10 @@
                         type="file"
                         name="photo"
                         class="w-full border rounded-lg px-4 py-2">
+                        @error('photo')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Party Logo -->
@@ -156,6 +197,10 @@
                         type="file"
                         name="party_logo"
                         class="w-full border rounded-lg px-4 py-2">
+                        @error('party_logo')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Password -->
@@ -167,6 +212,10 @@
                         name="password"
                         placeholder="********"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('password')
+                        <span class="text-red-600">{{ $message }}</span>
+
+                        @enderror
                 </div>
 
                 <!-- Confirm Password -->
@@ -178,6 +227,10 @@
                         name="confirm_password"
                         placeholder="********"
                         class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        @error('confirm_password')
+                        <span class="text-red-600"> confirm password doesnot match {{ $message }}</span>
+
+                        @enderror
                 </div>
 
             </div>

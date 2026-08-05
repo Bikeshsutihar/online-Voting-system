@@ -38,6 +38,11 @@ class regesterControl extends Controller
         'citizenship_no' => 'required|unique:fregistrations,citizenship_no',
         'password' => 'required|min:8',
         'confirm_password' => 'required|same:password',
+        ], [
+            // 'email' => 'This email aready registered',
+            'fullname'=> 'this field is required',
+            'phone_number' => 'This phone number is already registered',
+            'confirm_password' => 'Confirm password do not match'
 ]);
 
 
