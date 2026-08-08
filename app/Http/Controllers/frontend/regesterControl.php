@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
-
+use SweetAlert2\Laravel\Swal;
 use App\Http\Controllers\Controller;
 use App\Models\fregistration;
 use Illuminate\Http\Request;
@@ -57,6 +57,9 @@ class regesterControl extends Controller
         $frontendRegister->password             =             $request -> password;
         $frontendRegister->confirm_password     =             $request -> confirm_password;
         $frontendRegister -> save();
+       Swal::toastSuccess([
+            'title' => 'success',
+        ]);
        return redirect()->route('flogin');
 
     }

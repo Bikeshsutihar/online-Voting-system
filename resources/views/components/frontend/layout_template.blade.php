@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>vote-secure</title>
+    @include('sweetalert2::index')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset("fontawesome/css/all.min.css") }}">
     <link rel="stylesheet" href="{{ asset("css/admincss/style.css") }}">
