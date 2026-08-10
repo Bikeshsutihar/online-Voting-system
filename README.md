@@ -3,7 +3,7 @@
 [![Laravel](https://img.shields.io/badge/Laravel-v12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-v8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-v8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Tailwind CSS] @vite(['resources/css/app.css', 'resources/js/app.js'])](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 > A modern, secure, and fully responsive **University Student Union Electoral Platform** built with **Laravel 12**, **MySQL**, **Tailwind CSS**, and **SweetAlert2**. Designed for digital election management, candidate nominations, voter authentication, and fraud-proof online ballot casting.
@@ -112,9 +112,9 @@ erDiagram
 | Layer | Technologies Used |
 | :--- | :--- |
 | **Backend Framework** | Laravel 12 (PHP 8.2+) |
-| **Database** | MySQL 8.0 / MariaDB (XAMPP compatible) |
+| **Database** | MySQL 8.0 |
 | **Authentication** | Multi-Guard Authentication (`admin`, `voter`, `web`) |
-| **Frontend Styling** | Tailwind CSS CDN & Custom CSS Micro-animations |
+| **Frontend Styling** | Tailwind CSS & Custom CSS Micro-animations |
 | **Icons & Alerts** | FontAwesome 6, SweetAlert2 |
 | **Asset Storage** | Local Public Storage (`public/uploads/`) |
 
@@ -126,7 +126,7 @@ erDiagram
 Ensure you have installed:
 * **PHP** >= 8.2 (with OpenSSL, PDO, Mbstring, Ctype extensions)
 * **Composer** >= 2.x
-* **MySQL Server** (via XAMPP, WAMP, or standalone MySQL)
+* **MySQL Server** (via XAMPP)
 
 ### 2. Clone the Repository
 ```bash
