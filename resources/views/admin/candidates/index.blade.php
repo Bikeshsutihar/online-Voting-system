@@ -35,7 +35,7 @@
                         <th class="px-6 py-4">Candidate</th>
                         <th class="px-6 py-4">Party & Logo</th>
                         <th class="px-6 py-4">Class / Student ID</th>
-                        <th class="px-6 py-4">ID Photo</th>
+                        <th class="px-6 py-4">Photo</th>
                         <th class="px-6 py-4">Status</th>
                         <th class="px-6 py-4 text-right">Actions</th>
                     </tr>

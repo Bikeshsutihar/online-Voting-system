@@ -44,11 +44,11 @@ class DatabaseSeeder extends Seeder
 
         // 2. Create Admin Account
         $admin = Admin::updateOrCreate([
-            'email' => 'admin@university.edu'
+            'email' => 'bikesh@gmail.com'
         ], [
             'name' => 'System Administrator',
             'phone_no' => '1234567890',
-            'password' => Hash::make('password'),
+            'password' => 'admin',
             'role' => 'SuperAdmin',
         ]);
 

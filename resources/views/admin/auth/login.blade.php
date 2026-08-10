@@ -21,7 +21,7 @@
             </div>
         @endif
 
-        <form class="mt-8 space-y-6" action="{{ route('admin.login') }}" method="POST">
+        <form class="mt-8 space-y-6" action="{{ route('admin.login.submit') }}" method="POST">
             @csrf
             <div class="space-y-4">
                 <div>
@@ -30,7 +30,7 @@
                         <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
-                        <input id="email" name="email" type="email" required value="{{ old('email', 'admin@university.edu') }}" class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                        <input id="email" name="email" type="email" required placeholder="Example@gmail.com" class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                         <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
                             <i class="fa-solid fa-lock"></i>
                         </div>
-                        <input id="password" name="password" type="password" required value="password" class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                        <input id="password" name="password" type="password" required placeholder="password" class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
                     </div>
                 </div>
             </div>

@@ -98,8 +98,11 @@
                         <a href="{{ route('voter.login') }}" class="text-sm font-semibold text-slate-300 hover:text-white transition-colors">
                             <i class="fa-solid fa-user-lock mr-1.5"></i> Voter Login
                         </a>
-                        <a href="{{ route('voter.register') }}" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-md shadow-blue-600/30">
-                            <i class="fa-solid fa-user-check mr-1.5"></i> Register Voter
+                        <a href="{{ route('admin.login') }}" class="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fa-solid fa-lock mr-1.5"></i> Admin Portal
+                        </a>
+                        <a href="{{ route('admin.register') }}" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-md shadow-indigo-600/30">
+                            <i class="fa-solid fa-user-shield mr-1.5"></i> Admin Register
                         </a>
                     @endif
                 </div>

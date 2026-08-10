@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('id_card_photo'); // relative path stored in DB (public/uploads/...)
             $table->string('password');
             $table->boolean('is_verified')->default(true);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

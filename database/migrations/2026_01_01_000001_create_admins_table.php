@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('phone_no')->unique();
             $table->string('password');
             $table->string('role')->default('Admin');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

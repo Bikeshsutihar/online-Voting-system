@@ -21,9 +21,9 @@ Route::post('/candidate/apply', [CandidateApplicationController::class, 'store']
 // Voter Authentication Routes
 Route::prefix('voter')->name('voter.')->group(function () {
     Route::get('/login', [VoterAuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [VoterAuthController::class, 'login']);
+    Route::post('/login', [VoterAuthController::class, 'login'])->name('login.submit');
     Route::get('/register', [VoterAuthController::class, 'showRegisterForm'])->name('register');
-    Route::post('/register', [VoterAuthController::class, 'register']);
+    Route::post('/register', [VoterAuthController::class, 'register'])->name('register.submit');
     Route::post('/logout', [VoterAuthController::class, 'logout'])->name('logout');
 
     // Voter Protected Portal
@@ -36,7 +36,9 @@ Route::prefix('voter')->name('voter.')->group(function () {
 // Admin Authentication & Dashboard Routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [AdminAuthController::class, 'login']);
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
+    Route::get('/register', [AdminAuthController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [AdminAuthController::class, 'register'])->name('register.submit');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 
     // Admin Protected Routes

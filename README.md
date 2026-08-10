@@ -1,296 +1,283 @@
-# 🗳️ Online Voting System
+# 🗳️ University Student Union E-Voting System
 
-A secure, responsive, and user-friendly **Online Voting System** built with **Laravel, Tailwind CSS, JavaScript, and MySQL**. The system is designed for **universities, colleges, and student unions** to manage digital elections efficiently, transparently, and securely.
+[![Laravel](https://img.shields.io/badge/Laravel-v12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-v8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-v8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-## 🚀 Features
+> A modern, secure, and fully responsive **University Student Union Electoral Platform** built with **Laravel 12**, **MySQL**, **Tailwind CSS**, and **SweetAlert2**. Designed for digital election management, candidate nominations, voter authentication, and fraud-proof online ballot casting.
 
-* 🔐 **Secure Authentication & Authorization**
-* 👨‍💼 **Admin Dashboard**
-* 🧑‍🎓 **Voter Registration & Management**
-* 🗳️ **Online Voting**
-* 👤 **Candidate Registration**
-* ✅ **Candidate Approval by Admin**
-* 🏫 **University/College Election Management**
-* 🎓 **Student Union Elections**
-* 📊 **Automatic Vote Counting**
-* 📈 **Election Results**
-* 🖼️ **Candidate Profile & Party Logo**
-* 🛡️ **Middleware-Based Access Control**
-* 📱 **Fully Responsive Design**
-* 🎨 **Modern UI with Tailwind CSS**
-* ⚡ **JavaScript-Based Interactive Components**
-* 🔤 **Font Icons Integration**
-* 🗄️ **MySQL Database**
-* 🔒 **Validation and Session Management**
+---
 
-## 👥 User Roles
+## 🌟 Key Features
 
-### 👨‍💼 Admin
+### 🛡️ Administrative Portal & Authentication
+* **Admin Registration & Login System**: Dedicated `admin` authentication guard using custom session state, bcrypt password hashing, and role-based permissions.
+* **Dashboard Analytics**: Real-time stats counting registered voters, candidate applications, active elections, and total votes cast.
+* **Candidate Approval Workflow**: Review student candidate applications, verify ID proof photos, inspect party logos, and approve/reject nominations.
+* **Voter Verification**: Manage student voter registrations and toggle verification flags.
 
-* Manage voters and candidates
-* Review candidate applications
-* Approve or reject candidates
-* Manage election information
-* Monitor voting activities
-* View and publish election results
+### 🎓 Candidate Application Portal
+* **Online Nomination Form**: Students can apply for ongoing student union elections.
+* **File Management**: Direct public file storage for Student ID Card Photos (`public/uploads/candidate_ids`) and Political Party Logos (`public/uploads/candidate_logos`).
+* **Application Tracking**: Status feedback for pending, approved, or rejected applications.
 
-### 🧑‍🎓 Candidate
+### 🗳️ Student Voter Portal & Voting Booth
+* **Secure Voter Authentication**: Separate `voter` session guard for verified student login and registration.
+* **1-Voter 1-Vote Constraint**: Database-enforced unique indexes on `(voter_id, election_id)` ensuring a student cannot vote more than once in the same election.
+* **Audit Trail**: Real-time timestamping (`voted_at`) and IP address logging for anti-fraud audits.
 
-* Register as a candidate
-* Submit required information and documents
-* Add party information and logo
-* Check application status
-* Participate in the election after admin approval
+---
 
-### 🗳️ Voter
+## 📐 Database Schema & Entity-Relationship Diagram (ERD)
 
-* Create an account
-* Login securely
-* View eligible candidates
-* View candidate profiles
-* Cast a vote
-* View election results
+```mermaid
+erDiagram
+    ADMIN ||--o{ CANDIDATE : "approves / rejects"
+    VOTERS ||--o{ VOTE : "casts"
+    ELECTION ||--o{ CANDIDATE : "hosts"
+    ELECTION ||--o{ VOTE : "aggregates"
+    CANDIDATE ||--o{ VOTE : "receives"
 
-## 🛠️ Technologies Used
+    ADMIN {
+        bigint id PK
+        string name
+        string email UNIQUE
+        string phone_no UNIQUE
+        string password
+        string role
+        string remember_token
+        timestamps created_at
+    }
 
-| Technology       | Purpose                            |
-| ---------------- | ---------------------------------- |
-| **Laravel**      | Backend framework                  |
-| **PHP**          | Server-side programming            |
-| **MySQL**        | Database management                |
-| **Tailwind CSS** | Responsive UI design               |
-| **JavaScript**   | Interactive functionality          |
-| **Font Icons**   | UI icons                           |
-| **Blade**        | Laravel templating                 |
-| **Middleware**   | Authentication & role-based access |
+    CANDIDATE {
+        bigint id PK
+        bigint election_id FK
+        string name
+        string email UNIQUE
+        date dob
+        string class
+        string student_id UNIQUE
+        string party_name
+        string logo "Path: public/uploads/candidate_logos"
+        string phone_no
+        string id_card_photo "Path: public/uploads/candidate_ids"
+        enum status "pending, approved, rejected"
+        timestamp applied_at
+        bigint approved_by FK
+        timestamps created_at
+    }
 
-## 🏗️ System Architecture
+    VOTERS {
+        bigint id PK
+        string name
+        string email UNIQUE
+        string phone_no
+        string class
+        string student_id UNIQUE
+        date dob
+        string id_card_photo "Path: public/uploads/voter_ids"
+        string password
+        boolean is_verified
+        string remember_token
+        timestamps created_at
+    }
 
-```text
-                    ONLINE VOTING SYSTEM
-                            │
-             ┌──────────────┼──────────────┐
-             │              │              │
-           Admin         Candidate        Voter
-             │              │              │
-             └──────────────┼──────────────┘
-                            │
-                       Laravel Backend
-                            │
-                    Authentication
-                     & Middleware
-                            │
-                       MySQL Database
-                            │
-                    Election Results
+    ELECTION {
+        bigint id PK
+        string title
+        text description
+        datetime start_date
+        datetime end_date
+        enum status "upcoming, active, completed"
+        timestamps created_at
+    }
+
+    VOTE {
+        bigint id PK
+        bigint voter_id FK
+        bigint candidate_id FK
+        bigint election_id FK
+        timestamp voted_at
+        string ip_address
+        timestamps created_at
+    }
 ```
 
-## 🔄 Election Workflow
+---
 
-```text
-Voter/Candidate Registration
-            ↓
-     Candidate Applies
-            ↓
-       Admin Review
-            ↓
-    Candidate Approved
-            ↓
-      Election Begins
-            ↓
-        Voter Votes
-            ↓
-   Automatic Vote Counting
-            ↓
-     Election Results
-```
+## 🛠️ Technology Stack
 
-## 📁 Project Structure
+| Layer | Technologies Used |
+| :--- | :--- |
+| **Backend Framework** | Laravel 12 (PHP 8.2+) |
+| **Database** | MySQL 8.0 / MariaDB (XAMPP compatible) |
+| **Authentication** | Multi-Guard Authentication (`admin`, `voter`, `web`) |
+| **Frontend Styling** | Tailwind CSS CDN & Custom CSS Micro-animations |
+| **Icons & Alerts** | FontAwesome 6, SweetAlert2 |
+| **Asset Storage** | Local Public Storage (`public/uploads/`) |
 
-```text
-online-voting-system/
-│
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   └── Middleware/
-│   └── Models/
-│
-├── database/
-│   ├── migrations/
-│   └── seeders/
-│
-├── resources/
-│   ├── views/
-│   ├── css/
-│   └── js/
-│
-├── routes/
-│   └── web.php
-│
-├── public/
-│   └── uploads/
-│
-├── .env.example
-├── composer.json
-├── package.json
-└── README.md
-```
+---
 
-## ⚙️ Installation
+## 🚀 Installation & MySQL Configuration
 
-### 1. Clone the Repository
+### 1. Prerequisites
+Ensure you have installed:
+* **PHP** >= 8.2 (with OpenSSL, PDO, Mbstring, Ctype extensions)
+* **Composer** >= 2.x
+* **MySQL Server** (via XAMPP, WAMP, or standalone MySQL)
 
+### 2. Clone the Repository
 ```bash
-git clone https://github.com/your-username/online-voting-system.git
-cd online-voting-system
+git clone https://github.com/your-username/university-voting-system.git
+cd university-voting-system
 ```
 
-### 2. Install Laravel Dependencies
-
+### 3. Install Dependencies
 ```bash
 composer install
-```
-
-### 3. Install Frontend Dependencies
-
-```bash
 npm install
 ```
 
-### 4. Create Environment File
+### 4. Configure Environment (`.env`)
+Copy the environment template and update your database credentials:
 
 ```bash
 cp .env.example .env
 ```
 
-For Windows:
-
-```bash
-copy .env.example .env
-```
-
-### 5. Generate Application Key
-
-```bash
-php artisan key:generate
-```
-
-### 6. Configure Database
-
-Update your `.env` file:
-
+Open `.env` and set your MySQL configuration:
 ```env
-DB_DATABASE=online_voting
+APP_NAME="University Voting System"
+APP_URL=http://127.0.0.1:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=university_voting_system
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Create the database in MySQL before running migrations.
+> **Note**: Create the database `university_voting_system` in your MySQL engine (e.g. via phpMyAdmin or MySQL CLI) before running migrations.
 
-### 7. Run Migrations
-
+### 5. Generate Application Key & Run Migrations
 ```bash
-php artisan migrate
+php artisan key:generate
+php artisan migrate --seed
 ```
 
-If seeders are available:
+The database seeder creates a default administrator account:
+* **Admin Email**: `admin@university.edu`
+* **Admin Password**: `password123`
 
+### 6. Create Required Upload Folders
 ```bash
-php artisan db:seed
+mkdir -p public/uploads/candidate_logos
+mkdir -p public/uploads/candidate_ids
+mkdir -p public/uploads/voter_ids
 ```
 
-### 8. Build Frontend Assets
-
-```bash
-npm run build
-```
-
-For development:
-
-```bash
-npm run dev
-```
-
-### 9. Start Laravel Server
-
+### 7. Run Local Development Server
 ```bash
 php artisan serve
 ```
+Access the application at `http://127.0.0.1:8000`.
 
-Open:
+---
 
-```text
-http://127.0.0.1:8000
+## 🛣️ Application Route Reference
+
+| HTTP Method | Route | Controller & Method | Description |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/` | `HomeController@index` | Public Landing Page |
+| `GET` | `/admin/register` | `AdminAuthController@showRegisterForm` | Admin Registration View |
+| `POST` | `/admin/register` | `AdminAuthController@register` | Process Admin Account Creation |
+| `GET` | `/admin/login` | `AdminAuthController@showLoginForm` | Admin Login View |
+| `POST` | `/admin/login` | `AdminAuthController@login` | Process Admin Login |
+| `POST` | `/admin/logout` | `AdminAuthController@logout` | Admin Logout |
+| `GET` | `/admin/dashboard` | `DashboardController@index` | Protected Admin Dashboard |
+| `GET` | `/candidate/apply` | `CandidateApplicationController@create` | Candidate Application Form |
+| `POST` | `/candidate/apply` | `CandidateApplicationController@store` | Submit Nomination Application |
+| `GET` | `/voter/login` | `VoterAuthController@showLoginForm` | Voter Login Page |
+| `GET` | `/voter/register` | `VoterAuthController@showRegisterForm` | Student Voter Registration |
+| `GET` | `/voter/dashboard` | `VotingBoothController@dashboard` | Protected Voter Digital Booth |
+| `POST` | `/voter/vote` | `VotingBoothController@castVote` | Cast Encrypted Ballot |
+
+---
+
+## 📂 Project Directory Structure
+
+```
+university-voting-system/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admin/
+│   │   │   │   ├── AdminAuthController.php
+│   │   │   │   ├── CandidateController.php
+│   │   │   │   ├── DashboardController.php
+│   │   │   │   ├── ElectionController.php
+│   │   │   │   └── VoterController.php
+│   │   │   ├── Voter/
+│   │   │   │   ├── VoterAuthController.php
+│   │   │   │   └── VotingBoothController.php
+│   │   │   ├── CandidateApplicationController.php
+│   │   │   └── HomeController.php
+│   │   └── Middleware/
+│   │       ├── AdminMiddleware.php
+│   │       └── VoterMiddleware.php
+│   └── Models/
+│       ├── Admin.php
+│       ├── Candidate.php
+│       ├── Election.php
+│       ├── Vote.php
+│       └── Voter.php
+├── config/
+│   └── auth.php
+├── database/
+│   ├── migrations/
+│   │   ├── 2026_01_01_000001_create_admins_table.php
+│   │   ├── 2026_01_01_000002_create_elections_table.php
+│   │   ├── 2026_01_01_000003_create_candidates_table.php
+│   │   ├── 2026_01_01_000004_create_voters_table.php
+│   │   └── 2026_01_01_000005_create_votes_table.php
+│   └── seeders/
+│       ├── AdminSeeder.php
+│       └── DatabaseSeeder.php
+├── public/
+│   └── uploads/
+│       ├── candidate_ids/
+│       ├── candidate_logos/
+│       └── voter_ids/
+├── resources/
+│   └── views/
+│       ├── admin/
+│       │   ├── auth/
+│       │   │   ├── login.blade.php
+│       │   │   └── register.blade.php
+│       │   ├── candidates/
+│       │   ├── elections/
+│       │   ├── voters/
+│       │   └── dashboard.blade.php
+│       ├── voter/
+│       └── layouts/
+│           └── app.blade.php
+└── routes/
+    └── web.php
 ```
 
-## 🔐 Security
+---
 
-The system uses Laravel's built-in security features and application-level controls, including:
+## 🔐 Security Features
 
-* Authentication
-* Authorization
-* Middleware
-* CSRF Protection
-* Server-side Validation
-* Password Hashing
-* Session Management
-* Role-Based Access Control
+1. **Bcrypt Password Hashing**: Passwords for both Administrators and Student Voters are hashed with bcrypt.
+2. **CSRF Protection**: All form submissions include Laravel CSRF tokens.
+3. **Multi-Guard Session Segregation**: Prevents privilege escalation between student voters and administrative users.
+4. **Database Audit Constraints**: Prevents double-voting attacks via unique composite indexing `(voter_id, election_id)`.
 
-## 📱 Responsive Design
+---
 
-The interface is designed to work across:
-
-* 💻 Desktop
-* 💻 Laptop
-* 📱 Mobile
-* 📟 Tablet
-
-Tailwind CSS is used to create a clean and responsive user interface.
-
-## 🎯 Intended Use
-
-This project can be adapted for:
-
-* 🏫 Universities
-* 🎓 Colleges
-* 🧑‍🎓 Student Unions
-* 🏛️ Campus Organizations
-* 📚 Department-Level Elections
-* 🗳️ Student Representative Elections
-
-## 🔮 Future Improvements
-
-* Email/SMS notifications
-* Election scheduling
-* Advanced analytics and charts
-* Audit logs
-* Two-factor authentication
-* Digital voter verification
-* Export election reports as PDF/Excel
-* Multiple election support
-* Improved accessibility
-* Deployment with production-grade security
-
-## 👨‍💻 Developer
-
-**Bikesh Sutihar**
-
-Laravel Developer | BCA Student
-
-Developed as an academic/project-based **Online Voting System** for university, college, and student union elections.
-
-## ⭐ Contributing
-
-Contributions, suggestions, and improvements are welcome.
-
-1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Commit your changes
-5. Push to your branch
-6. Create a Pull Request
-
-## 📄 License
-
-This project is developed for **educational and academic purposes**. You may modify and extend it according to your institution's requirements.
+## 📜 License
+This project is open-source software licensed under the [MIT License](LICENSE).
