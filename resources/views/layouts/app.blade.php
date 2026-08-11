@@ -8,7 +8,7 @@
     <!-- Tailwind CSS -->
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="icon" href="{{ asset("icon/Screenshot 2026-08-10 191635.png") }}">
+    <link rel="icon" href="{{ asset("icon/Screenshot_2026-08-10_191635-removebg-preview.png") }}">
 
     <!-- FontAwesome 6 -->
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> --}}
@@ -68,7 +68,7 @@
                             <i class="fa-solid fa-vote-yea text-white text-xl"></i>
                         </div>
                         <div>
-                            <span class="font-heading font-extrabold text-2xl tracking-tight text-white">Uni<span class="text-blue-400">Vote</span></span>
+                            <span class="font-heading font-extrabold text-2xl tracking-tight text-white">Uni<span class="text-blue-400">Ballot</span></span>
                             <span class="block text-xs font-medium text-slate-400 tracking-wider uppercase">Student Union Portal</span>
                         </div>
                     </a>
@@ -107,9 +107,9 @@
                         <a href="{{ route('admin.login') }}" class="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors">
                             <i class="fa-solid fa-lock mr-1.5"></i> Admin Portal
                         </a>
-                        <a href="{{ route('admin.register') }}" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-md shadow-indigo-600/30">
+                        {{-- <a href="{{ route('admin.register') }}" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-md shadow-indigo-600/30">
                             <i class="fa-solid fa-user-shield mr-1.5"></i> Admin Register
-                        </a>
+                        </a> --}}
                     @endif
                 </div>
 
@@ -169,7 +169,7 @@
                 <div>
                     <div class="flex items-center space-x-2 mb-3">
                         <i class="fa-solid fa-vote-yea text-blue-500 text-xl"></i>
-                        <span class="font-heading font-bold text-lg text-white">UniVote System</span>
+                        <span class="font-heading font-bold text-lg text-white">UniBallot System</span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">
                         A modern, secure, and transparent e-voting platform designed for university student union elections.
@@ -187,7 +187,7 @@
                 <div>
                     <h4 class="text-white font-semibold text-sm mb-3">Security & Integrity</h4>
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
-                        Enforces 1-voter 1-vote constraint, student ID photo verification, and IP address logging for audit trails.
+                        Enforces 1-voter 1-vote constraint, student ID_Card_No verification, and IP address logging for audit trails.
                     </p>
                     <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                         <i class="fa-solid fa-shield-halved mr-1.5"></i> SSL & IP Audited E-Voting

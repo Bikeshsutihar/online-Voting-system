@@ -29,7 +29,7 @@
                         <th class="px-6 py-4">Voter Name</th>
                         <th class="px-6 py-4">Student ID / Class</th>
                         <th class="px-6 py-4">Contact Info</th>
-                        <th class="px-6 py-4">ID Card Photo</th>
+                        <th class="px-6 py-4">Photo</th>
                         <th class="px-6 py-4">Verification</th>
                         <th class="px-6 py-4 text-right">Actions</th>
                     </tr>

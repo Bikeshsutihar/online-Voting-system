@@ -12,7 +12,7 @@
 
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="{{ asset("icon/Screenshot 2026-08-10 191635.png") }}">
+    <link rel="icon" href="{{ asset("icon/Screenshot_2026-08-10_191635-removebg-preview.png")}}">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="{{ asset("fontawesome/css/all.min.css") }}">
 
