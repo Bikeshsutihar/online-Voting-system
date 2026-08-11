@@ -3,7 +3,7 @@
 [![Laravel](https://img.shields.io/badge/Laravel-v12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-v8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-v8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
-[![Tailwind CSS] @vite(['resources/css/app.css', 'resources/js/app.js'])](https://tailwindcss.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 > A modern, secure, and fully responsive **University Student Union Electoral Platform** built with **Laravel 12**, **MySQL**, **Tailwind CSS**, and **SweetAlert2**. Designed for digital election management, candidate nominations, voter authentication, and fraud-proof online ballot casting.
