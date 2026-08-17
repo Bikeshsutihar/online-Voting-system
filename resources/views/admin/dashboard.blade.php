@@ -53,7 +53,7 @@
     </div>
 
     <!-- Active Election Live Voting Progress -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="">
         <div class="lg:col-span-2 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
             <div class="flex items-center justify-between mb-6">
                 <div>
@@ -105,7 +105,7 @@
         </div>
 
         <!-- Quick Actions & Pending Approvals Widget -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+        {{-- <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
             <div>
                 <h3 class="text-lg font-bold font-heading text-slate-900 mb-4">Quick Management</h3>
                 <div class="space-y-3">
@@ -136,7 +136,7 @@
                     </a>
                 </div>
             @endif
-        </div>
+        </div> --}}
     </div>
 
     <!-- Recent Audit Vote Trail -->

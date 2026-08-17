@@ -98,7 +98,7 @@
                     <div class="relative h-48 bg-gradient-to-tr from-slate-900 to-slate-800 flex items-center justify-center p-6">
                         <!-- Candidate Photo -->
                         <img src="{{ asset($candidate->id_card_photo) }}" alt="{{ $candidate->name }}" class="w-28 h-28 rounded-full border-4 border-white object-cover shadow-lg group-hover:scale-105 transition-transform" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($candidate->name) }}&background=2563eb&color=fff'">
-                        
+
                         <!-- Party Logo Badge -->
                         <div class="absolute bottom-3 right-4 bg-white p-1.5 rounded-xl shadow-md border border-slate-100 flex items-center space-x-2">
                             <img src="{{ asset($candidate->logo) }}" alt="{{ $candidate->party_name }}" class="w-7 h-7 object-contain rounded" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($candidate->party_name) }}'">
