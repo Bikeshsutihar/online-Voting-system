@@ -34,12 +34,12 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <label for="name" class="block text-xs font-bold text-slate-700 mb-1">Full Candidate Name *</label>
-                        <input type="text" name="name" id="name" required value="{{ old('name') }}" placeholder="Alex Morgan" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
+                        <input type="text" name="name" id="name" required value="{{ old('name') }}" placeholder="Bikesh Sutihar" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
                     </div>
 
                     <div>
                         <label for="email" class="block text-xs font-bold text-slate-700 mb-1">University Email *</label>
-                        <input type="email" name="email" id="email" required value="{{ old('email') }}" placeholder="alex@university.edu" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
+                        <input type="email" name="email" id="email" required value="{{ old('email') }}" placeholder="Example@gmail.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
                     </div>
 
                     <div>
@@ -49,12 +49,12 @@
 
                     <div>
                         <label for="phone_no" class="block text-xs font-bold text-slate-700 mb-1">Phone Number *</label>
-                        <input type="text" name="phone_no" id="phone_no" required value="{{ old('phone_no') }}" placeholder="+1 555-0177" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
+                        <input type="text" name="phone_no" id="phone_no" required value="{{ old('phone_no') }}" placeholder="+977 98xxxxxxxx" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
                     </div>
 
                     <div>
                         <label for="class" class="block text-xs font-bold text-slate-700 mb-1">Class / Department *</label>
-                        <input type="text" name="class" id="class" required value="{{ old('class') }}" placeholder="BSc Computer Science - 4th Year" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
+                        <input type="text" name="class" id="class" required value="{{ old('class') }}" placeholder="BCA" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
                     </div>
 
                     <div>
