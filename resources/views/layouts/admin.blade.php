@@ -92,7 +92,7 @@
             </nav>
         </div>
 
-        <!-- Admin Profile Info & Logout -->
+       
         <div class="p-4 border-t border-slate-800 bg-slate-950">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
@@ -114,7 +114,7 @@
         </div>
     </aside>
 
-    <!-- Main Content Area -->
+
     <div class="flex-grow flex flex-col min-w-0">
         <!-- Topbar Header -->
         <header class="bg-white border-b border-slate-200 h-20 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30 shadow-sm">
@@ -137,7 +137,7 @@
             </div>
         </header>
 
-        <!-- Dynamic Content Body -->
+
         <main class="p-4 sm:p-8 flex-grow">
             @yield('content')
         </main>
