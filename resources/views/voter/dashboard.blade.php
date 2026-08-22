@@ -84,7 +84,7 @@
                             <div>
                                 <div class="relative h-44 bg-gradient-to-tr from-slate-900 to-slate-800 flex items-center justify-center p-4">
                                     <img src="{{ asset($candidate->id_card_photo) }}" alt="{{ $candidate->name }}" class="w-24 h-24 rounded-full border-4 border-white object-cover shadow-lg" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($candidate->name) }}'">
-                                    
+
                                     <div class="absolute bottom-3 right-4 bg-white px-3 py-1 rounded-xl shadow-md border border-slate-100 flex items-center space-x-2">
                                         <img src="{{ asset($candidate->logo) }}" alt="{{ $candidate->party_name }}" class="w-6 h-6 object-contain rounded" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($candidate->party_name) }}'">
                                         <span class="text-xs font-bold text-slate-800">{{ $candidate->party_name }}</span>
@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="p-6 pt-0">
-                                <button type="button" 
+                                <button type="button"
                                         onclick="confirmVote({{ $candidate->id }}, '{{ addslashes($candidate->name) }}', '{{ addslashes($candidate->party_name) }}')"
                                         class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm rounded-xl shadow-md shadow-blue-600/30 transition-all flex items-center justify-center">
                                     <i class="fa-solid fa-vote-yea mr-2"></i> Cast Vote for {{ strtok($candidate->name, " ") }}
@@ -142,7 +142,7 @@
             cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Submit AJAX Vote
+                
                 Swal.fire({
                     title: 'Recording Vote...',
                     text: 'Securing ballot in database...',
