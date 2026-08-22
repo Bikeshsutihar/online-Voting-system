@@ -59,7 +59,7 @@
                 </a>
             </div>
 
-            <!-- Navigation Links -->
+            
             <nav class="p-4 space-y-1.5">
                 <div class="px-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Main Menu</div>
 
@@ -92,7 +92,7 @@
             </nav>
         </div>
 
-       
+
         <div class="p-4 border-t border-slate-800 bg-slate-950">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
