@@ -101,10 +101,10 @@
                             <i class="fa-solid fa-gauge-high mr-1.5"></i> Admin Dashboard
                         </a>
                     @else
-                        <a href="{{ route('voter.login') }}" class="text-sm font-semibold text-slate-300 hover:text-white transition-colors">
+                        <a href="{{ route('voter.login') }}" class="text-sm font-semibold text-slate-300 hover:text-blue-500 transition-colors">
                             <i class="fa-solid fa-user-lock mr-1.5"></i> Voter Login
                         </a>
-                        <a href="{{ route('admin.login') }}" class="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                        <a href="{{ route('admin.login') }}" class="text-sm font-semibold text-blue-400 hover:text-blue-500 transition-colors">
                             <i class="fa-solid fa-lock mr-1.5"></i> Admin Portal
                         </a>
                         {{-- <a href="{{ route('admin.register') }}" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-md shadow-indigo-600/30">
@@ -189,46 +189,4 @@
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
                         Enforces 1-voter 1-vote constraint, student ID_Card_No verification, and IP address logging for audit trails.
                     </p>
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        <i class="fa-solid fa-shield-halved mr-1.5"></i> SSL & IP Audited E-Voting
-                    </span>
-                </div>
-            </div>
-            <div class="pt-6 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
-                <p>&copy; {{ date('Y') }} University Student Union. All rights reserved.</p>
-                <p class="mt-2 md:mt-0"><i class="fa-solid fa-code text-blue-400 mr-1"></i> Developed for University Assignment Project</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile Menu JS Toggle & SweetAlert Flash Notifications -->
-    <script>
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
-            document.getElementById('mobile-menu')?.classList.toggle('hidden');
-        });
-
-        @if(session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: "{{ session('success') }}",
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true
-            });
-        @endif
-
-        @if(session('error'))
-            Swal.fire({
-                icon: 'error',
-                title: 'Attention',
-                text: "{{ session('error') }}",
-                confirmButtonColor: '#2563eb'
-            });
-        @endif
-    </script>
-    @yield('scripts')
-</body>
-</html>
+                    <span class="inline-flex items-cen9

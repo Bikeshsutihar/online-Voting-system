@@ -3,7 +3,10 @@
 @section('title', 'Admin Login - UniVote System')
 
 @section('content')
+<div>
+
 <div class="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-slate-900">
+{{-- <div class="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-[url('public/background_image/pexels-argelis-rebolledo-189647-939962.jpg')] bg-cover bg-center"> --}}
     <div class="max-w-md w-full space-y-8 bg-slate-800 p-8 sm:p-10 rounded-3xl border border-slate-700 shadow-2xl">
         <div class="text-center">
             <div class="w-16 h-16 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
@@ -57,5 +60,6 @@
             </button>
         </form>
     </div>
+</div>
 </div>
 @endsection
