@@ -147,7 +147,7 @@
                     Admin Dashboard
                 </a>
             @else
-                <a href="{{ route('voter.login') }}" class="block text-slate-300 hover:text-white font-medium py-2">
+                <a href="{{ route('voter.login') }}" class="block text-slate-300 hover:text-blue-500 font-medium py-2">
                     <i class="fa-solid fa-user-lock w-6 text-blue-400"></i> Voter Login
                 </a>
                 <a href="{{ route('voter.register') }}" class="block bg-blue-600 text-white text-center font-semibold py-2.5 rounded-lg">
