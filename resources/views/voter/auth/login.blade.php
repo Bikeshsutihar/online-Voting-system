@@ -50,7 +50,7 @@
                     <input type="checkbox" name="remember" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500 mr-2">
                     Remember Me
                 </label>
-                <a href="{{ route('voter.register') }}" class="font-semibold text-blue-600 hover:underline">New Student? Register Here</a>
+                {{-- <a href="{{ route('voter.register') }}" class="font-semibold text-blue-600 hover:underline">New Student? Register Here</a> --}}
             </div>
 
             <button type="submit" class="w-full py-3.5 px-4 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center">

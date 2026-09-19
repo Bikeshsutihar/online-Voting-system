@@ -150,9 +150,9 @@
                 <a href="{{ route('voter.login') }}" class="block text-slate-300 hover:text-blue-500 font-medium py-2">
                     <i class="fa-solid fa-user-lock w-6 text-blue-400"></i> Voter Login
                 </a>
-                <a href="{{ route('voter.register') }}" class="block bg-blue-600 text-white text-center font-semibold py-2.5 rounded-lg">
+                {{-- <a href="{{ route('voter.register') }}" class="block bg-blue-600 text-black text-center font-semibold py-2.5 rounded-lg">
                     Register Voter
-                </a>
+                </a> --}}
             @endif
         </div>
     </nav>
@@ -180,7 +180,7 @@
                     <ul class="space-y-2 text-xs">
                         <li><a href="{{ route('home') }}" class="hover:text-blue-400 transition-colors">Election Home</a></li>
                         <li><a href="{{ route('candidate.apply') }}" class="hover:text-blue-400 transition-colors">Candidate Nomination Portal</a></li>
-                        <li><a href="{{ route('voter.register') }}" class="hover:text-blue-400 transition-colors">Voter Registration</a></li>
+                        {{-- <li><a href="{{ route('voter.register') }}" class="hover:text-blue-400 transition-colors">Voter Registration</a></li> --}}
                         <li><a href="{{ route('admin.login') }}" class="hover:text-blue-400 transition-colors">Administrator Portal</a></li>
                     </ul>
                 </div>

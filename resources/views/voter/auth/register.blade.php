@@ -4,9 +4,9 @@
 
 @section('content')
 <div class="max-w-2xl mx-auto py-12 px-4 sm:px-6">
-    <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl space-y-6">
+    <div class="bg-black p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl space-y-6">
         <div class="text-center">
-            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-100">
+            <div class="w-14 h-14 bg-blue-500 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-100">
                 <i class="fa-solid fa-user-check text-xl"></i>
             </div>
             <h2 class="text-2xl font-extrabold font-heading text-slate-900">Student Voter Registration</h2>
@@ -14,7 +14,7 @@
         </div>
 
         @if($errors->any())
-            <div class="bg-red-50 border border-red-200 text-red-700 p-4 rounded-xl text-xs space-y-1">
+            <div class="bg-red-500 border border-red-200 text-red-700 p-4 rounded-xl text-xs space-y-1">
                 @foreach($errors->all() as $error)
                     <p><i class="fa-solid fa-circle-exclamation mr-1"></i> {{ $error }}</p>
                 @endforeach

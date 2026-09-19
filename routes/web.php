@@ -37,7 +37,7 @@ Route::prefix('voter')->name('voter.')->group(function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
-    Route::get('/register', [AdminAuthController::class, 'showRegisterForm'])->name('register');
+    // Route::get('/register', [AdminAuthController::class, 'showRegisterForm'])->name('register');
     Route::post('/register', [AdminAuthController::class, 'register'])->name('register.submit');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 

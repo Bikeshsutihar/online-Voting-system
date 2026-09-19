@@ -25,7 +25,7 @@
                             <i class="fa-solid fa-check-to-slot mr-2"></i> Enter Voting Booth
                         </a>
                     @else
-                        <a href="{{ route('voter.register') }}" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-2xl transition-all shadow-lg shadow-blue-600/40 flex items-center">
+                        <a href="{{ route('voter.register.submit') }}" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-2xl transition-all shadow-lg shadow-blue-600/40 flex items-center">
                             <i class="fa-solid fa-id-card mr-2"></i> Register as Voter
                         </a>
                         <a href="{{ route('voter.login') }}" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-7 py-3.5 rounded-2xl border border-slate-700 transition-all flex items-center">
