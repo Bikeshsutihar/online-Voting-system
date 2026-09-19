@@ -48,6 +48,13 @@ class VotingBoothController extends Controller
     {
         $voter = Auth::guard('voter')->user();
 
+        if (!$voter) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Unauthenticated session. Please log in as a voter.',
+            ], 401);
+        }
+
         if (!$voter->is_verified) {
             return response()->json([
                 'success' => false,
@@ -60,8 +67,8 @@ class VotingBoothController extends Controller
             'election_id' => 'required|exists:elections,id',
         ]);
 
-        $election = Election::findOrFail($request->election_id);
-        if ($election->status !== 'active') {
+        $election = Election::find($request->election_id);
+        if (!$election || $election->status !== 'active') {
             return response()->json([
                 'success' => false,
                 'message' => 'This election is not currently active for voting.',
@@ -82,7 +89,14 @@ class VotingBoothController extends Controller
         $candidate = Candidate::where('id', $request->candidate_id)
             ->where('election_id', $election->id)
             ->where('status', 'approved')
-            ->firstOrFail();
+            ->first();
+
+        if (!$candidate) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Selected candidate is invalid or not approved for this election.',
+            ], 404);
+        }
 
         Vote::create([
             'voter_id' => $voter->id,

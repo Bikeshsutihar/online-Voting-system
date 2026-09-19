@@ -102,7 +102,7 @@
 
                             <div class="p-6 pt-0">
                                 <button type="button"
-                                        onclick="confirmVote({{ $candidate->id }}, '{{ addslashes($candidate->name) }}', '{{ addslashes($candidate->party_name) }}')"
+                                        onclick="confirmVote({{ $candidate->id }}, @js($candidate->name), @js($candidate->party_name))"
                                         class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm rounded-xl shadow-md shadow-blue-600/30 transition-all flex items-center justify-center">
                                     <i class="fa-solid fa-vote-yea mr-2"></i> Cast Vote for {{ strtok($candidate->name, " ") }}
                                 </button>

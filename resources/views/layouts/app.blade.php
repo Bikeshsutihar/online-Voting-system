@@ -189,4 +189,26 @@
                     <p class="text-xs text-slate-400 leading-relaxed mb-3">
                         Enforces 1-voter 1-vote constraint, student ID_Card_No verification, and IP address logging for audit trails.
                     </p>
-                    <span class="inline-flex items-cen9
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        <i class="fa-solid fa-lock mr-1.5"></i> Encrypted Audit Trail
+                    </span>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
+                &copy; {{ date('Y') }} UniBallot System. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+    @yield('scripts')
+</body>
+</html>
